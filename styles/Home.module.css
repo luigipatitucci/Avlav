@@ -1,0 +1,392 @@
+.main {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: var(--spacing-lg) 0;
+}
+
+/* Parallax sections */
+.homeSection {
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  position: relative;
+}
+
+/* Manifesto Sections - Editorial Two-Column */
+.manifestoSection {
+  background: #212323;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  border-top: 1px solid rgba(231, 236, 239, 0.12);
+  border-bottom: 1px solid rgba(231, 236, 239, 0.12);
+  position: relative;
+}
+
+.manifestoContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+  overflow: visible;
+}
+
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.manifestoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.manifestoEyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(231, 236, 239, 0.5);
+  display: block;
+}
+
+.manifestoTitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+.manifestoRight {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.manifestoText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 1.7;
+  color: rgba(231, 236, 239, 0.9);
+  margin: 0;
+  max-width: 55ch;
+}
+
+.manifestoAccent {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 3px;
+  height: 100%;
+  background: #162DFF;
+  transform: rotate(169deg);
+  transform-origin: top left;
+}
+
+.manifestoContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifestoContent h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  margin: 0 0 4rem 0;
+}
+
+.manifestoContent p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #E7ECEF;
+  margin: 0 0 5rem 0;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manifestoCta {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.375rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #162DFF;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  border-bottom: 3px solid #162DFF;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+  transition: none;
+}
+
+.manifestoCta:hover {
+  color: #E7ECEF;
+  border-bottom-color: #E7ECEF;
+}
+
+/* Results Section - Clean Centered Proof */
+.resultsSection {
+  background: #212323;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  border-top: 1px solid rgba(231, 236, 239, 0.12);
+  border-bottom: 1px solid rgba(231, 236, 239, 0.12);
+}
+
+.resultsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+}
+
+.resultsContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resultsTitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.125rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  margin: 0;
+}
+
+.resultsSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+  color: rgba(231, 236, 239, 0.9);
+  margin: 0;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resultsProof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(231, 236, 239, 0.12);
+}
+
+.resultsProofItem {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: rgba(231, 236, 239, 0.6);
+  white-space: nowrap;
+}
+
+.resultsProofDivider {
+  color: rgba(231, 236, 239, 0.3);
+  font-size: 1rem;
+}
+
+/* Final CTA Section - Compact Centered Closing */
+.ctaSection {
+  background: #212323;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  border-top: 1px solid rgba(231, 236, 239, 0.12);
+}
+
+.ctaContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5.5rem 4rem;
+}
+
+.ctaContent {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.ctaTitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.125rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  margin: 0;
+}
+
+.ctaSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+  color: rgba(231, 236, 239, 0.75);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.ctaButton {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  background: #162DFF;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  border: 2px solid #162DFF;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: #162DFF;
+}
+
+.ctaProcess {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.ctaProcessItem {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: rgba(231, 236, 239, 0.5);
+  white-space: nowrap;
+}
+
+.ctaProcessDivider {
+  color: rgba(231, 236, 239, 0.25);
+  font-size: 1rem;
+}
+
+.homeContentWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .manifestoContainer {
+    padding: 4.5rem 2rem;
+  }
+
+  .manifestoGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .manifestoTitle {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .manifestoText {
+    font-size: 1.125rem;
+  }
+
+  .manifestoSection {
+    padding: 8rem 2rem;
+  }
+
+  .manifestoContent h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .manifestoContent p {
+    font-size: 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .manifestoCta {
+    font-size: 1.125rem;
+  }
+
+  .manifestoAccent {
+    left: 5%;
+  }
+
+  .resultsContainer {
+    padding: 4.5rem 2rem;
+  }
+
+  .resultsProof {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .ctaContainer {
+    padding: 4rem 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 2rem;
+    font-size: 0.9375rem;
+  }
+
+  .ctaProcess {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

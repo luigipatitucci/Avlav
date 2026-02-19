@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Pages.module.css'
 
-export default function ContactForm() {
+type ContactFormProps = {
+  initialService?: string
+}
+
+export default function ContactForm({ initialService }: ContactFormProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [project, setProject] = useState('')
@@ -9,6 +13,12 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<'idle'|'success'|'error'>('idle')
   const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (initialService) {
+      setProject(initialService)
+    }
+  }, [initialService])
 
   const validate = () => {
     if (!name.trim() || !email.trim() || !message.trim()) {

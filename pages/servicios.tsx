@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import ServicesGrid from '../components/ServicesGrid'
 import styles from '../styles/Pages.module.css'
-
+import DiagonalDivider from '../components/DiagonalDivider'
 export default function Servicios() {
   return (
     <Layout>
@@ -20,6 +20,7 @@ export default function Servicios() {
           ctaHref="/contacto" 
           variant="servicios"
         />
+        <DiagonalDivider/>
         <ServicesGrid />
       </main>
     </Layout>

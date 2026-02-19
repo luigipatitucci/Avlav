@@ -1,4 +1,3 @@
-'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Pages.module.css'
@@ -6,7 +5,6 @@ import styles from '../styles/Pages.module.css'
 type ServiceDetail = {
   whatWeDo: string[]
   deliverables: string[]
-  timeline: string[]
 }
 
 type Service = { 
@@ -23,8 +21,7 @@ const services: Service[] = [
     desc: 'Estrategia integrada que potencia tu presencia online con análisis y creatividad.',
     details: {
       whatWeDo: ['Análisis de audiencia y mercado', 'Estrategia de contenido multicanal', 'Optimización de conversión'],
-      deliverables: ['Plan estratégico mensual', 'Reportes de performance', 'Recomendaciones de mejora'],
-      timeline: ['Diagnóstico: 1 semana', 'Estrategia: 2 semanas', 'Implementación: continua']
+      deliverables: ['Plan estratégico mensual', 'Reportes de performance', 'Recomendaciones de mejora']
     }
   },
   { 
@@ -33,8 +30,7 @@ const services: Service[] = [
     desc: 'Gestión profesional de redes sociales y fortalecimiento de identidad digital.',
     details: {
       whatWeDo: ['Gestión de redes sociales', 'Creación de contenido', 'Interacción con comunidad'],
-      deliverables: ['Calendario de contenido', 'Publicaciones diarias', 'Reportes mensuales'],
-      timeline: ['Onboarding: 1 semana', 'Planificación: 1 semana', 'Gestión: continua']
+      deliverables: ['Calendario de contenido', 'Publicaciones diarias', 'Reportes mensuales']
     }
   },
   { 
@@ -43,8 +39,7 @@ const services: Service[] = [
     desc: 'Campañas en Meta, Google y YouTube que aumentan alcance y conversión.',
     details: {
       whatWeDo: ['Diseño de campañas', 'Segmentación de audiencia', 'Optimización continua'],
-      deliverables: ['Setup de campañas', 'Creatividades', 'Dashboard de resultados'],
-      timeline: ['Setup: 1 semana', 'Prueba: 2 semanas', 'Optimización: continua']
+      deliverables: ['Setup de campañas', 'Creatividades', 'Dashboard de resultados']
     }
   },
   {
@@ -53,78 +48,79 @@ const services: Service[] = [
     desc: 'Diseño y automatización de newsletters y campañas promocionales efectivas.',
     details: {
       whatWeDo: ['Diseño de campañas', 'Segmentación de base', 'Automatización de flujos'],
-      deliverables: ['Templates personalizados', 'Flujos automatizados', 'Análisis de métricas'],
-      timeline: ['Setup: 1 semana', 'Primera campaña: 1 semana', 'Optimización: continua']
+      deliverables: ['Templates personalizados', 'Flujos automatizados', 'Análisis de métricas']
     }
   },
   {
     id: 's5',
-    title: 'SEO / SEM',
+    title: 'SEO/SEM',
     desc: 'Optimización orgánica y paga para mejorar posicionamiento en buscadores.',
     details: {
       whatWeDo: ['Auditoría técnica', 'Optimización on-page', 'Estrategia de palabras clave'],
-      deliverables: ['Informe de auditoría', 'Plan de optimización', 'Reportes mensuales'],
-      timeline: ['Auditoría: 2 semanas', 'Implementación: 4 semanas', 'Monitoreo: continuo']
+      deliverables: ['Informe de auditoría', 'Plan de optimización', 'Reportes mensuales']
     }
   },
   {
     id: 's6',
-    title: 'Analítica Digital',
+    title: 'Analítica digital',
     desc: 'Monitoreo de métricas y análisis de datos para identificar oportunidades.',
     details: {
       whatWeDo: ['Configuración de analytics', 'Dashboards personalizados', 'Análisis de comportamiento'],
-      deliverables: ['Setup de herramientas', 'Dashboards interactivos', 'Reportes insights'],
-      timeline: ['Setup: 1 semana', 'Dashboards: 2 semanas', 'Reportes: mensuales']
+      deliverables: ['Setup de herramientas', 'Dashboards interactivos', 'Reportes insights']
     }
   },
   {
     id: 's7',
-    title: 'Estrategia Digital',
+    title: 'Estrategia digital',
     desc: 'Definición de objetivos, públicos y calendario para presencia coherente.',
     details: {
       whatWeDo: ['Análisis competitivo', 'Definición de objetivos', 'Roadmap de contenido'],
-      deliverables: ['Plan estratégico', 'Calendario editorial', 'Guía de tono y voz'],
-      timeline: ['Diagnóstico: 1 semana', 'Estrategia: 3 semanas', 'Implementación: continua']
+      deliverables: ['Plan estratégico', 'Calendario editorial', 'Guía de tono y voz']
     }
   },
   {
     id: 's8',
-    title: 'Edición de Video',
-    desc: 'Creación audiovisual con impacto para promocionales y contenido digital.',
+    title: 'Diseño Web',
+    desc: 'Sitios web funcionales, seguros y accesibles con experiencia clara.',
     details: {
-      whatWeDo: ['Edición profesional', 'Motion graphics', 'Corrección de color'],
-      deliverables: ['Videos editados', 'Assets optimizados', 'Variantes para redes'],
-      timeline: ['Briefing: 3 días', 'Edición: 1-2 semanas', 'Revisiones: 3 días']
+      whatWeDo: ['Diseño UI/UX', 'Desarrollo frontend/backend', 'Testing y optimización'],
+      deliverables: ['Sitio web responsive', 'CMS configurado', 'Documentación técnica']
     }
   },
   {
     id: 's9',
-    title: 'Producción en Vivo',
-    desc: 'Producción técnica para eventos y streamings con calidad profesional.',
-    details: {
-      whatWeDo: ['Producción técnica', 'Streaming multicanal', 'Postproducción'],
-      deliverables: ['Setup técnico', 'Transmisión en vivo', 'Grabación editada'],
-      timeline: ['Preproducción: 1 semana', 'Evento: día acordado', 'Postproducción: 1 semana']
-    }
-  },
-  {
-    id: 's10',
     title: 'Diseño Gráfico',
     desc: 'Identidades visuales y piezas gráficas con diseño profesional y coherente.',
     details: {
       whatWeDo: ['Diseño de identidad', 'Piezas gráficas', 'Material digital y print'],
-      deliverables: ['Manual de marca', 'Assets digitales', 'Templates editables'],
-      timeline: ['Briefing: 3 días', 'Propuestas: 1 semana', 'Ajustes: 1 semana']
+      deliverables: ['Manual de marca', 'Assets digitales', 'Templates editables']
+    }
+  },
+  {
+    id: 's10',
+    title: 'Edición de Video',
+    desc: 'Creación audiovisual con impacto para promocionales y contenido digital.',
+    details: {
+      whatWeDo: ['Edición profesional', 'Motion graphics', 'Corrección de color'],
+      deliverables: ['Videos editados', 'Assets optimizados', 'Variantes para redes']
     }
   },
   {
     id: 's11',
-    title: 'Desarrollo Web',
-    desc: 'Sitios web funcionales, seguros y accesibles con experiencia clara.',
+    title: 'Producción Audiovisual',
+    desc: 'Producción integral de contenido audiovisual para marcas y proyectos.',
     details: {
-      whatWeDo: ['Diseño UI/UX', 'Desarrollo frontend/backend', 'Testing y optimización'],
-      deliverables: ['Sitio web responsive', 'CMS configurado', 'Documentación técnica'],
-      timeline: ['Diseño: 2 semanas', 'Desarrollo: 4-6 semanas', 'Testing: 1 semana']
+      whatWeDo: ['Producción de video', 'Grabación profesional', 'Dirección creativa'],
+      deliverables: ['Videos producidos', 'Material en bruto', 'Archivos finalizados']
+    }
+  },
+  {
+    id: 's12',
+    title: 'Producción en vivo',
+    desc: 'Producción técnica para eventos y streamings con calidad profesional.',
+    details: {
+      whatWeDo: ['Producción técnica', 'Streaming multicanal', 'Postproducción'],
+      deliverables: ['Setup técnico', 'Transmisión en vivo', 'Grabación editada']
     }
   }
 ]
@@ -140,8 +136,8 @@ export default function ServicesGrid() {
     <section className={styles.servicesSection}>
       <div className={styles.servicesContainer}>
         <div className={styles.servicesHeader}>
-          <div className={styles.servicesHeaderLeft}>
-            <h2 className={styles.servicesSectionTitle}>SERVICIOS</h2>
+          <div className={`${styles.servicesHeaderLeft} ${styles.raisedHeader}`}>
+            <h2 className={`${styles.servicesSectionTitle} ${styles.raisedTitle}`}>SERVICIOS</h2>
             <p className={styles.servicesSubheading}>Soluciones digitales integrales para el crecimiento de tu marca</p>
           </div>
           <Link href="/contacto" className={styles.servicesHeaderCta}>Solicitar consultoría</Link>
@@ -182,12 +178,12 @@ export default function ServicesGrid() {
                       </ul>
                     </div>
                     <div className={styles.serviceDetailsColumn}>
-                      <h4 className={styles.serviceDetailsHeading}>Tiempos</h4>
-                      <ul className={styles.serviceDetailsList}>
-                        {service.details.timeline.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
+                      <Link 
+                        href={`/contacto?servicio=${encodeURIComponent(service.title)}`}
+                        className={styles.serviceCta}
+                      >
+                        CONSULTAR →
+                      </Link>
                     </div>
                   </div>
                 </div>

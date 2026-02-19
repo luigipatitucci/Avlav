@@ -4,6 +4,13 @@ import Hero from '../components/Hero'
 import styles from '../styles/Pages.module.css'
 
 function OurStory() {
+  const collageImages = [
+    { src: '/branding/Servicios-collage/editing-1141505_1280.jpg', alt: 'Edición y postproducción', layer: 'mid1' },
+    { src: '/branding/Servicios-collage/laptop-2620118_1280.jpg', alt: 'Desarrollo digital', layer: 'mid2' },
+    { src: '/branding/Servicios-collage/microphone-2613444_1280.jpg', alt: 'Producción audiovisual', layer: 'back' },
+    { src: '/branding/Servicios-collage/technology-2608867_1280.jpg', alt: 'Estrategia tecnológica', layer: 'front' }
+  ]
+
   return (
     <section className={styles.storySection}>
       <div className={styles.storyContainer}>
@@ -19,8 +26,17 @@ function OurStory() {
               Desde nuestros primeros proyectos, hemos mantenido un compromiso con la calidad, la innovación y la transparencia.
             </p>
           </div>
-          <div className={styles.storyImage}>
-            <img src="/branding/imagenes/pexels-eduschadesoares-8583023.jpg" alt="Equipo AVLAV trabajando" />
+          <div className={styles.storyCollage}>
+            <div className={styles.storyCollageInner}>
+              {collageImages.map((img, index) => (
+                <img 
+                  key={index}
+                  src={img.src} 
+                  alt={img.alt} 
+                  className={`${styles.storyPhoto} ${styles[`storyPhoto${index + 1}`]}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -28,37 +44,115 @@ function OurStory() {
   )
 }
 
-function Founders() {
-  const founders = [
+function TeamSections() {
+  const sections = [
     {
-      id: 'founder-1',
-      name: 'Hugo',
-      role: 'Co-fundador & Dirección Estratégica',
-      image: '/branding/fotos-equipo/HUGO.png'
+      title: 'Comunicación y estrategia digital',
+      people: [
+        {
+          id: 'team-lara',
+          name: 'Lara Rodríguez',
+          role: 'Lic. en Comunicación · Estrategia Digital',
+          image: '/branding/fotos-equipo/LARA RODRIGUEZ.png'
+        },
+        {
+          id: 'team-sebastian',
+          name: 'Sebastián Patitucci',
+          role: 'Publicidad Digital',
+          image: '/branding/fotos-equipo/SEBASTIÁN PATITUCCI.jpg'
+        }
+      ]
     },
     {
-      id: 'founder-2',
-      name: 'Lucas',
-      role: 'Co-fundador & Desarrollo',
-      image: '/branding/fotos-equipo/LUCAS.png'
+      title: 'Realización audiovisual y diseño gráfico',
+      people: [
+        {
+          id: 'team-lucila',
+          name: 'Lucila Patitucci',
+          role: 'Diseño de Imagen y Sonido',
+          image: '/branding/fotos-equipo/LUCILA PATITUCCI_EDICIÓN AUDIOVISUAL.jpg'
+        },
+        {
+          id: 'team-romina',
+          name: 'Romina Sastre',
+          role: 'Diseño de Imagen y Sonido',
+          image: '/branding/fotos-equipo/ROMINA SASTRE.jpg'
+        },
+        {
+          id: 'team-camila',
+          name: 'Camila Pittaluga',
+          role: 'Diseño de Imagen y Sonido',
+          image: '/branding/fotos-equipo/CAMILA PITTALUGA.png'
+        },
+        {
+          id: 'team-mercedes',
+          name: 'Mercedes Somoza',
+          role: 'Diseño Gráfico',
+          image: '/branding/fotos-equipo/MERCEDES SOMOZA FLORES_DISEÑO GRÁFICO.jpg'
+        },
+        {
+          id: 'team-pablo',
+          name: 'Pablo Patitucci',
+          role: 'Diseño Gráfico',
+          image: '/branding/fotos-equipo/PABLO PATITUCCI.png'
+        }
+      ]
+    },
+    {
+      title: 'Cultura y Producción de eventos',
+      people: [
+        {
+          id: 'team-nahuel',
+          name: 'Nahuel Veksler',
+          role: 'Música y DJ',
+          image: '/branding/fotos-equipo/HUGO VEKSLER_DISEÑO DE SONIDO.jpg'
+        },
+        {
+          id: 'team-carlos-hector',
+          name: 'Carlos Héctor Juárez',
+          role: 'Producción de Eventos · Técnica de Iluminación y Sonido',
+          image: '/branding/fotos-equipo/CARLOS JUÁREZ.jpg'
+        },
+        {
+          id: 'team-lucas',
+          name: 'Lucas Candia',
+          role: 'Gestión Cultural · Artes Escénicas',
+          image: '/branding/fotos-equipo/LUCAS CANDIA.png'
+        }
+      ]
     }
   ]
 
   return (
-    <section className={styles.foundersSection}>
-      <div className={styles.foundersContainer}>
-        <h2 className={styles.foundersTitle}>EQUIPO FUNDADOR</h2>
-        <div className={styles.foundersGrid}>
-          {founders.map((founder) => (
-            <div key={founder.id} className={styles.founderCard}>
-              <div className={styles.founderImage}>
-                <img src={founder.image} alt={founder.name} />
+    <section className={styles.teamSectionsSection}>
+      <div className={styles.teamSectionsContainer}>
+        {sections.map((section, idx) => (
+          <div key={section.title} className={styles.teamSectionBlock}>
+            {idx > 0 ? <div className={styles.teamSectionDivider} /> : null}
+            <div className={styles.teamSectionLayout}>
+              <div className={`${styles.teamSectionLeft} ${styles.raisedHeader} ${styles.raisedHeaderMagenta}`}>
+                <h2 className={`${styles.teamSectionTitle} ${styles.raisedTitle}`}>{section.title}</h2>
               </div>
-              <h3 className={styles.founderName}>{founder.name}</h3>
-              <p className={styles.founderRole}>{founder.role}</p>
+              <div className={styles.teamSectionRight}>
+                <div className={styles.teamSectionGrid}>
+                  {section.people.map((person) => (
+                    <article key={person.id} className={styles.teamSectionPerson}>
+                      <div className={styles.teamPhoto}>
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className={styles.teamPhotoImage}
+                        />
+                      </div>
+                      <h3 className={styles.teamName}>{person.name}</h3>
+                      <p className={styles.teamRole}>{person.role}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -88,8 +182,8 @@ function HowWeWork() {
       <div className={styles.workDivider}></div>
       <div className={styles.workContainer}>
         <div className={styles.workLayout}>
-          <div className={styles.workLeft}>
-            <h2 className={styles.workSectionTitle}>CÓMO TRABAJAMOS</h2>
+          <div className={`${styles.workLeft} ${styles.raisedHeader}`}>
+            <h2 className={`${styles.workSectionTitle} ${styles.raisedTitle}`}>CÓMO TRABAJAMOS</h2>
           </div>
           <div className={styles.workRight}>
             <div className={styles.workList}>
@@ -124,8 +218,8 @@ function Values() {
     <section className={styles.valuesSection}>
       <div className={styles.valuesContainer}>
         <div className={styles.valuesLayout}>
-          <div className={styles.valuesLeft}>
-            <h2 className={styles.valuesTitle}>NUESTROS VALORES</h2>
+          <div className={`${styles.valuesLeft} ${styles.raisedHeader}`}>
+            <h2 className={`${styles.valuesTitle} ${styles.raisedTitle}`}>NUESTROS VALORES</h2>
           </div>
           <div className={styles.valuesRight}>
             {values.map((value, idx) => (
@@ -158,7 +252,7 @@ export default function Quienes() {
           variant="quienes"
         />
         <OurStory />
-        <Founders />
+        <TeamSections />
         <HowWeWork />
         <Values />
       </main>

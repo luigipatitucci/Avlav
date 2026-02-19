@@ -1,15 +1,20 @@
 import Link from 'next/link'
 import styles from '../styles/Pages.module.css'
 
-export default function PautaSection() {
+type Props = {
+  headingLevel?: 1 | 2
+}
+
+export default function PautaSection({ headingLevel = 2 }: Props) {
+  const TitleTag = headingLevel === 1 ? 'h1' : 'h2'
   return (
     <section className={styles.pautaEditorial}>
       <div className={styles.pautaContainer}>
         <div className={styles.pautaGrid}>
           <div className={styles.pautaLeft}>
-            <div className={styles.pautaHeader}>
+            <div className={`${styles.pautaHeader} ${styles.raisedHeader}`}>
               <span className={styles.pautaEyebrow}>PUBLICIDAD DIGITAL</span>
-              <h2 className={styles.pautaTitle}>PAUTA PUBLICITARIA Y ADS</h2>
+              <TitleTag className={`${styles.pautaTitle} ${styles.raisedTitle}`}>PAUTA PUBLICITARIA Y ADS</TitleTag>
             </div>
             <div className={styles.pautaCtas}>
               <Link href="/contacto" className={styles.pautaCtaPrimary}>

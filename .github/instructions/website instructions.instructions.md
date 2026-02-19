@@ -101,3 +101,37 @@ Behavior:
 - Do not change content text unless asked
 - Do not add animations unless explicitly requested
 - If unsure, choose the most minimal brutalist option
+# TECH BASELINE (REPO-AWARE)
+
+This repo uses Next.js 14 with the **Pages Router**.
+- Routes live in `/pages` (e.g. pages/index.tsx, pages/servicios.tsx).
+- Do NOT create new routes in `/app` unless explicitly asked.
+- Do NOT add `'use client'` directives in components (only relevant for App Router).
+
+Styling:
+- Use **CSS Modules** for all new UI work.
+- `styles/globals.css` exists for legacy/reset only.
+- Do NOT introduce new global variables, animations, shadows, gradients, or design tokens in globals.
+- Prefer keeping design decisions inside the local CSS Module of each component/section.
+
+Project structure:
+- Reusable UI components go in `/components`.
+- Page-level composition stays in `/pages`.
+- Do not create new folders or move files unless asked.
+
+Change policy:
+- Minimal diff. Do not refactor unrelated files.
+- Do not change copy/content unless explicitly asked.
+/* 
+MOBILE-FIRST RULES:
+- Desktop styles must remain untouched
+- All mobile fixes go inside media queries
+- No visual hacks (no scale, no magic numbers)
+- Keep brutalist / editorial aesthetic
+*/
+We have inconsistent section widths on mobile: some sections are constrained (boxed) leaving white gutters, others are full width. 
+Goal: ensure every section background spans full viewport width (100vw) and only the inner content is constrained via a shared container.
+Do NOT use hacks like transform scale.
+Prefer a consistent layout system: .section { width: 100%; } + .container { max-width; margin auto; padding; }.
+Apply fixes mobile-first but do not break desktop.
+

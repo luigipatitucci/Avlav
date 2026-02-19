@@ -1,0 +1,64 @@
+/* Editorial divider - Single diagonal magenta line */
+.divider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #212323;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  outline: none;
+  box-shadow: none;
+  
+}
+
+/* Prevent pseudo-elements */
+.divider::before,
+.divider::after {
+  content: none;
+  display: none;
+}
+
+/* Single diagonal line - magenta rupture */
+.diagonalLine {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 42%;
+  left: 0;
+  transform: rotate(-1.8deg);
+  transform-origin: center center;
+
+  background: linear-gradient(
+    to right,
+    rgba(246, 45, 174, 0.2),
+    #F62DAE,
+    rgba(246, 45, 174, 0.6)
+  );
+
+  border: none;
+  outline: none;
+}
+
+
+
+/* Prevent pseudo-elements on line */
+.diagonalLine::before,
+.diagonalLine::after {
+  content: none;
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .divider {
+    padding: 3.5rem 0;
+  }
+  
+  .diagonalLine {
+    height: 1.5px;
+    transform: rotate(-2deg);
+  }
+}

@@ -23,8 +23,8 @@ export default function Footer() {
           <div className={styles.linksColumn}>
             <h4 className={styles.linksTitle}>CONTACTO</h4>
             <address className={styles.address}>
-              <a href="mailto:info@misitio.example" className={styles.link}>info@misitio.example</a>
-              <p className={styles.addressText}>Tel: +34 600 000 000</p>
+              <a href="mailto:avlavcooperativa@gmail.com" className={styles.link}>avlavcooperativa@gmail.com</a>
+              <p className={styles.addressText}>Tel: +54 3704594480</p>
             </address>
           </div>
         </div>

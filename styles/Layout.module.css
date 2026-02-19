@@ -2,15 +2,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-light);
+  background: #212323;
+  width: 100%;
 }
+
 .content {
   flex: 1 0 auto;
-  padding: var(--spacing-xl) var(--spacing-lg);
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
-  animation: fadeIn var(--transition-slow) ease forwards;
 }
 .footer {
   text-align: center;
@@ -23,7 +21,12 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    width: 100%;
+    overflow-x: clip;
+  }
+
   .content {
-    padding: var(--spacing-lg) var(--spacing-md);
+    width: 100%;
   }
 }

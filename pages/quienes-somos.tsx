@@ -235,7 +235,7 @@ export default function Quienes() {
           subtitle="Una cooperativa creativa que diseña, construye y potencia experiencias digitales con impacto" 
           ctaText="Trabajemos juntos" 
           ctaHref="/contacto" 
-          variant="quienes"
+          variant="quienes-somos"
         />
         <DiagonalDivider />
         <OurStory />

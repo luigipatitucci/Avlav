@@ -199,7 +199,7 @@ export default function AboutSection() {
 
           {/* Mobile CTA - Only visible on mobile */}
           <div className={styles.aboutMobileCTA}>
-            <Link href="/quienes" className={styles.primaryButton}>
+            <Link href="/quienes-somos" className={styles.primaryButton}>
               CONOCENOS
             </Link>
           </div>

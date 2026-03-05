@@ -15,7 +15,7 @@ export default function Footer() {
             <h4 className={styles.linksTitle}>SECCIONES</h4>
             <ul className={styles.linksList}>
               <li><Link href="/servicios" className={styles.link}>Servicios</Link></li>
-              <li><Link href="/quienes" className={styles.link}>Quienes Somos</Link></li>
+              <li><Link href="/quienes-somos" className={styles.link}>Quienes Somos</Link></li>
               <li><Link href="/contacto" className={styles.link}>Contacto</Link></li>
               <li><Link href="/pauta" className={styles.link}>Pauta Publicitaria</Link></li>
             </ul>

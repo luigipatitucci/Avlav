@@ -6,7 +6,7 @@ type Props = {
   subtitle?: string
   ctaText?: string
   ctaHref?: string
-  variant?: 'home' | 'servicios' | 'quienes' | 'contacto' | 'pauta'
+  variant?: 'home' | 'servicios' | 'quienes-somos' | 'contacto' | 'pauta'
 }
 
 export default function Hero({ 
@@ -18,7 +18,7 @@ export default function Hero({
 }: Props) {
   const variantClass =
     variant === 'servicios' ? styles.heroServicios :
-    variant === 'quienes' ? styles.heroQuienes :
+    variant === 'quienes-somos' ? styles.heroQuienes :
     variant === 'contacto' ? styles.heroContacto :
     variant === 'pauta' ? styles.heroPauta :
     ''

@@ -112,6 +112,22 @@
   max-width: 55ch;
 }
 
+/* Shared Body Text - Consistent Typography */
+.bodyText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  text-align: justify;
+  color: rgba(231, 236, 239, 0.9);
+  margin: 0 0 2rem 0;
+  max-width: 70ch;
+}
+
+.bodyText:last-child {
+  margin-bottom: 0;
+}
+
 .manifestoAccent {
   position: absolute;
   top: 0;
@@ -346,8 +362,19 @@
 }
 
 @media (max-width: 768px) {
+  .homeContentWrap {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .manifestoSection {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .manifestoContainer {
-    padding: 4.5rem 1rem;
+    padding: 4.5rem 1.5rem;
   }
 
   .manifestoGrid {
@@ -363,30 +390,22 @@
     font-size: 1.125rem;
   }
 
-  .manifestoSection {
-    padding: 2rem 2rem;
-  }
-
-  .manifestoContent h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .manifestoContent p {
-    font-size: 1.25rem;
-    margin-bottom: 4rem;
-  }
-
-  .manifestoCta {
-    font-size: 1.125rem;
+  .bodyText {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .manifestoAccent {
     left: 5%;
   }
 
+  .resultsSection {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .resultsContainer {
-    padding: 4.5rem 2rem;
+    padding: 4.5rem 1.5rem;
   }
 
   .resultsProof {
@@ -394,8 +413,13 @@
     gap: 1rem;
   }
 
+  .ctaSection {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .ctaContainer {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
   }
 
   .ctaButton {

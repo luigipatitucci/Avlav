@@ -5,7 +5,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0;
-  min-height: 60vh;
+  min-height: 55vh;
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -148,21 +148,35 @@
   cursor: not-allowed;
 }
 
+/* Primary Button - Blue background (matches CONTACTANOS style) */
+.primaryButton {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E7ECEF;
+  background: #162DFF;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  border: 2px solid #162DFF;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.primaryButton:hover {
+  background: transparent;
+  color: #162DFF;
+  transform: translateY(-2px);
+}
+
 /* Shared editorial title lift */
 .raisedHeader {
   position: relative;
   padding-bottom: 1.25rem;
 }
 
-.raisedHeader::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 72px;
-  height: 2px;
-  background: rgba(231, 236, 239, 0.16);
-}
 
 .raisedTitle {
   position: relative;
@@ -170,9 +184,6 @@
 }
 
 /* Magenta accent variant for raised headers (editorial emphasis) */
-.raisedHeaderMagenta::after {
-  background: rgba(246, 45, 174, 0.6);
-}
 
 /* Magenta highlight for emphasis words */
 .magentaAccent {
@@ -425,7 +436,7 @@
 
 @media (max-width: 968px) {
   .servicesContainer {
-    padding: 4.5rem 2rem;
+    padding: 4.5rem 1.5rem;
   }
 
   .servicesHeader {
@@ -474,7 +485,6 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0;
-  border-bottom: 1px solid rgba(231, 236, 239, 0.15);
 }
 
 .aboutContainer {
@@ -526,6 +536,27 @@
   margin-bottom: 0;
 }
 
+/* Shared Body Text - Consistent Typography */
+.bodyText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  text-align: justify;
+  color: rgba(231, 236, 239, 0.9);
+  margin: 0 0 2rem 0;
+  max-width: 70ch;
+}
+
+.bodyText:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile CTA - Hidden on desktop */
+.aboutMobileCTA {
+  display: none;
+}
+
 /* Scroll-Pinned Horizontal Photo Slider */
 .aboutScrollScene {
   min-height: 300vh; /* Dynamic via JS */
@@ -541,7 +572,7 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .aboutPhotoStrip {
@@ -577,7 +608,7 @@
   .hero {
     width: 100%;
     margin-left: 0;
-    min-height: 50vh;
+    min-height: 40vh;
   }
 
   .heroContainer {
@@ -652,6 +683,55 @@
   .aboutParagraph {
     font-size: 1rem;
     line-height: 1.7;
+  }
+
+  .bodyText {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Mobile CTA for About section */
+  .aboutMobileCTA {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  /* Full-width section mobile fixes */
+  .servicesSection,
+  .aboutSection,
+  .aboutScrollScene,
+  .workSection,
+  .pautaEditorial,
+  .storySection,
+  .teamSectionsSection,
+  .valuesSection,
+  .pautaReasonsSection {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .aboutContainer {
+    padding: 4rem 1.5rem;
+  }
+
+  /* Work section mobile spacing improvements */
+  .workContainer {
+    padding: 5rem 1.5rem;
+  }
+
+  .workIntro {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .workIntroLeft {
+    position: static;
+  }
+
+  .workTitle {
+    font-size: clamp(2rem, 6vw, 2.5rem);
   }
 
   .aboutTeamGrid {
@@ -1173,7 +1253,7 @@
 
 @media (max-width: 968px) {
   .pautaContainer {
-    padding: 4.5rem 2rem;
+    padding: 4.5rem 1.5rem;
   }
 
   .pautaGrid {
@@ -1417,7 +1497,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #E7ECEF;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
 
@@ -1428,22 +1508,57 @@
   line-height: 1.6;
   color: rgba(231, 236, 239, 0.8);
   margin: 0;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 @media (max-width: 768px) {
   .principlesList {
-    gap: 3rem;
+    gap: 4.5rem;
+    margin-top: 3.5rem;
   }
 
   .principleItem {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1.5rem;
+    row-gap: 0.75rem;
+    align-items: center;
   }
 
   .principleNumber {
-    grid-row: 1;
-    font-size: 4rem;
+    grid-row: 1 / 3;
+    font-size: 3.5rem;
+    opacity: 0.25;
+  }
+
+  .principleTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Desktop improvements for CÓMO TRABAJAMOS section */
+@media (min-width: 769px) {
+  .workContainer {
+    padding: 9rem 4rem;
+  }
+
+  .workIntro {
+    gap: 8rem;
+    margin-bottom: 6rem;
+  }
+
+  .principlesList {
+    gap: 6rem;
+    margin-top: 6rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .principleItem {
+    grid-template-columns: 80px 1fr;
+    column-gap: 3.5rem;
   }
 }
 
@@ -1579,188 +1694,91 @@
 }
 
 /* STORY SECTION - Block 2 */
+/* NUESTRA HISTORIA - Editorial layout */
 .storySection {
+  position: relative;
   background: #212323;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
   padding: 0;
-  border-top: 1px solid rgba(231, 236, 239, 0.15);
-  border-bottom: 1px solid rgba(231, 236, 239, 0.15);
 }
+
 
 .storyContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 6rem 4rem;
 }
 
 .storyGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10rem;
-  align-items: center;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+  align-items: start;
 }
 
-.storyContent {
-  max-width: 560px;
+.storyLeft {
+  position: sticky;
+  top: 2rem;
+}
+
+.storyTitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #E7ECEF;
+  margin: 0;
+}
+
+.storyRight {
+  max-width: 700px;
 }
 
 .storyParagraph {
   font-family: 'Inter', sans-serif;
-  font-size: 1.1875rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.65;
   color: rgba(231, 236, 239, 0.85);
-  margin-bottom: 1.75rem;
-}
-
-.storyParagraph:first-of-type {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.storyParagraph:first-of-type::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 6px;
-  height: 6px;
-  background: #F62DAE;
-  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  max-width: 70ch;
 }
 
 .storyParagraph:last-child {
   margin-bottom: 0;
 }
 
-.storyImage {
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
-  border: 2px solid rgba(231, 236, 239, 0.12);
-  overflow: hidden;
-  transition: border-color 0.3s ease;
-}
-
-.storyImage:hover {
-  border-color: rgba(231, 236, 239, 0.2);
-}
-
-.storyImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.storyImage:hover img {
-  transform: scale(1.02);
-}
-
-/* Story Photo Collage - Bold Interactive Pile */
-.storyCollage {
-  width: 100%;
-  height: 100%;
-  min-height: 540px;
-  cursor: pointer;
-  position: relative;
-  overflow: visible;
-  padding: 2rem;
-}
-
-.storyCollageInner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-.storyPhoto {
-  position: absolute;
-  width: clamp(270px, 32vw, 380px);
-  height: clamp(200px, 24vw, 285px);
-  object-fit: cover;
-  border: 1px solid rgba(231, 236, 239, 0.15);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  will-change: transform;
-  transition: transform 650ms ease-in-out, box-shadow 650ms ease-in-out;
-}
-
-/* Default "stacked" state - organic pile */
-/* Photo 1: editing (mid layer) */
-.storyPhoto1 {
-  transform: translate(-45px, -35px) rotate(-7deg);
-  z-index: 2;
-}
-
-/* Photo 2: laptop (mid layer) */
-.storyPhoto2 {
-  transform: translate(30px, 40px) rotate(6deg);
-  z-index: 3;
-}
-
-/* Photo 3: microphone (BACK layer - lowest) */
-.storyPhoto3 {
-  transform: translate(-20px, 20px) rotate(-4deg);
-  z-index: 1;
-  opacity: 0.95;
-}
-
-/* Photo 4: technology/camera (FRONT layer - highest) */
-.storyPhoto4 {
-  transform: translate(45px, -20px) rotate(5deg);
-  z-index: 4;
-}
-
-/* Hover "spread" state - bold reveal */
-.storyCollage:hover .storyPhoto1 {
-  transform: translate(-165px, -60px) rotate(-3deg);
-  z-index: 2;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.storyCollage:hover .storyPhoto2 {
-  transform: translate(100px, 80px) rotate(2deg);
-  z-index: 3;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* Microphone spreads back */
-.storyCollage:hover .storyPhoto3 {
-  transform: translate(-110px, 85px) rotate(-1deg);
-  z-index: 1;
-  opacity: 1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.38);
-}
-
-/* Camera/technology comes forward with subtle scale */
-.storyCollage:hover .storyPhoto4 {
-  transform: translate(170px, -50px) rotate(2deg) scale(1.05);
-  z-index: 4;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .storyPhoto {
-    transition: none;
+@media (max-width: 768px) {
+  .storySection {
+    width: 100%;
+    margin-left: 0;
   }
-  
-  .storyPhoto1 { transform: translate(-15px, -15px) rotate(0deg); z-index: 2; opacity: 1; }
-  .storyPhoto2 { transform: translate(15px, 15px) rotate(0deg); z-index: 3; }
-  .storyPhoto3 { transform: translate(-15px, 15px) rotate(0deg); z-index: 1; opacity: 1; }
-  .storyPhoto4 { transform: translate(15px, -15px) rotate(0deg) scale(1); z-index: 4; }
-  
-  .storyCollage:hover .storyPhoto1,
-  .storyCollage:hover .storyPhoto2,
-  .storyCollage:hover .storyPhoto3,
-  .storyCollage:hover .storyPhoto4 {
-    transform: translate(0, 0) rotate(0deg) scale(1);
+
+  .storyContainer {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .storyLeft {
+    position: static;
+  }
+
+  .storyTitle {
+    font-size: 2.5rem;
+  }
+
+  .storyParagraph {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+
+  .storyDiagonal {
+    display: none;
   }
 }
 
@@ -1780,8 +1798,6 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0;
-  border-top: 1px solid rgba(231, 236, 239, 0.15);
-  border-bottom: 1px solid rgba(231, 236, 239, 0.15);
 }
 
 .teamSectionsContainer {
@@ -1874,6 +1890,22 @@
 
   .teamSectionDivider {
     margin: 4rem 0;
+  }
+
+  /* Reduce team photo size on mobile */
+  .teamPhoto {
+    max-width: 65vw;
+    margin: 0 auto;
+  }
+
+  .teamName {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .teamRole {
+    font-size: 0.875rem;
+    text-align: center;
   }
 }
 
@@ -1984,7 +2016,7 @@
 
 .workLayout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 5rem;
 }
 
@@ -2074,8 +2106,6 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0;
-  border-top: 1px solid rgba(231, 236, 239, 0.15);
-  border-bottom: 1px solid rgba(231, 236, 239, 0.15);
 }
 
 .valuesContainer {
@@ -2211,11 +2241,11 @@
   .storyContainer,
   .foundersContainer,
   .workContainer {
-    padding: 6rem 2rem;
+    padding: 6rem 1.5rem;
   }
 
   .valuesContainer {
-    padding: 6rem 2rem 8rem;
+    padding: 6rem 1.5rem 8rem;
   }
 
   .foundersTitle,
@@ -2743,7 +2773,7 @@
 
 @media (max-width: 980px) {
   .pautaReasonsContainer {
-    padding: 5rem 2rem;
+    padding: 5rem 1.5rem;
   }
 
   .pautaReasonsLayout {

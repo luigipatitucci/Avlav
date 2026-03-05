@@ -2,41 +2,27 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import styles from '../styles/Pages.module.css'
+import DiagonalDivider from '../components/DiagonalDivider'
 
 function OurStory() {
-  const collageImages = [
-    { src: '/branding/Servicios-collage/editing-1141505_1280.jpg', alt: 'Edición y postproducción', layer: 'mid1' },
-    { src: '/branding/Servicios-collage/laptop-2620118_1280.jpg', alt: 'Desarrollo digital', layer: 'mid2' },
-    { src: '/branding/Servicios-collage/microphone-2613444_1280.jpg', alt: 'Producción audiovisual', layer: 'back' },
-    { src: '/branding/Servicios-collage/technology-2608867_1280.jpg', alt: 'Estrategia tecnológica', layer: 'front' }
-  ]
-
   return (
     <section className={styles.storySection}>
+      <div className={styles.storyDiagonal} />
       <div className={styles.storyContainer}>
         <div className={styles.storyGrid}>
-          <div className={styles.storyContent}>
-            <p className={styles.storyParagraph}>
-              AVLAV nació de la visión de reunir a profesionales talentosos en un modelo de trabajo colaborativo y democrático.
-            </p>
-            <p className={styles.storyParagraph}>
-              Somos una cooperativa de trabajo que entiende que el éxito de nuestros clientes es nuestro éxito.
-            </p>
-            <p className={styles.storyParagraph}>
-              Desde nuestros primeros proyectos, hemos mantenido un compromiso con la calidad, la innovación y la transparencia.
-            </p>
+          <div className={`${styles.storyLeft} ${styles.raisedHeader} ${styles.raisedHeaderMagenta}`}>
+            <h2 className={`${styles.storyTitle} ${styles.raisedTitle}`}>NUESTRA HISTORIA</h2>
           </div>
-          <div className={styles.storyCollage}>
-            <div className={styles.storyCollageInner}>
-              {collageImages.map((img, index) => (
-                <img 
-                  key={index}
-                  src={img.src} 
-                  alt={img.alt} 
-                  className={`${styles.storyPhoto} ${styles[`storyPhoto${index + 1}`]}`}
-                />
-              ))}
-            </div>
+          <div className={styles.storyRight}>
+            <p className={styles.storyParagraph}>
+              AVLAV nació con la idea de reunir profesionales con experiencia en un modelo de trabajo colaborativo y eficiente.
+            </p>
+            <p className={styles.storyParagraph}>
+              Somos una cooperativa que entiende que el crecimiento de nuestros clientes es también el nuestro. Por eso trabajamos con compromiso, responsabilidad y una mirada estratégica en cada proyecto.
+            </p>
+            <p className={styles.storyParagraph}>
+              Desde el inicio, sostenemos tres pilares: calidad en la ejecución, innovación en las soluciones y transparencia en cada etapa del proceso.
+            </p>
           </div>
         </div>
       </div>
@@ -251,9 +237,13 @@ export default function Quienes() {
           ctaHref="/contacto" 
           variant="quienes"
         />
+        <DiagonalDivider />
         <OurStory />
+        <DiagonalDivider />
         <TeamSections />
+        <DiagonalDivider />
         <HowWeWork />
+        <DiagonalDivider />
         <Values />
       </main>
     </Layout>

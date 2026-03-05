@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from 'react'
+import Link from 'next/link'
 import styles from '../styles/Pages.module.css'
 import EquipoCard from './EquipoCard'
+import DiagonalDivider from './DiagonalDivider'
 
 export default function AboutSection() {
   const sceneRef = useRef<HTMLDivElement>(null)
@@ -182,17 +184,24 @@ export default function AboutSection() {
               <h2 className={`${styles.aboutTitle} ${styles.raisedTitle}`}>QUIÉNES SOMOS</h2>
             </div>
             <div className={styles.aboutIntroRight}>
-              <p className={styles.aboutParagraph}>
+              <p className={styles.bodyText}>
                 Somos una cooperativa de trabajo conformada por un equipo multidisciplinario, donde cada integrante aporta su
                 experiencia y se desarrolla profesionalmente en su área. Nuestra diversidad de saberes nos permite explorar,
                 crear y producir con una mirada integral, potenciando el trabajo colectivo y la calidad de los proyectos.
               </p>
-              <p className={styles.aboutParagraph}>
+              <p className={styles.bodyText}>
                 Nos adaptamos a las particularidades de cada desafío con creatividad y originalidad, lo que nos permite definir
                 los objetivos en conjunto y desarrollarlos con cada cliente, revisándolos y acompañando su transformación en el
                 tiempo, sosteniendo y ajustando el proceso de manera dinámica.
               </p>
             </div>
+          </div>
+
+          {/* Mobile CTA - Only visible on mobile */}
+          <div className={styles.aboutMobileCTA}>
+            <Link href="/quienes" className={styles.primaryButton}>
+              CONOCENOS
+            </Link>
           </div>
         </div>
 
@@ -212,7 +221,7 @@ export default function AboutSection() {
           </div>
         </div>
       </section>
-
+                <DiagonalDivider />
       <section className={styles.workSection}>
         <div className={styles.workContainer}>
           <div className={styles.workIntro}>
@@ -220,12 +229,12 @@ export default function AboutSection() {
               <h2 className={`${styles.workTitle} ${styles.raisedTitle}`}>CÓMO TRABAJAMOS</h2>
             </div>
             <div className={styles.workIntroRight}>
-              <p className={styles.workParagraph}>
+              <p className={styles.bodyText}>
                 Trabajamos de manera horizontal y colaborativa, porque entendemos que las mejores ideas surgen del intercambio y
                 la construcción colectiva. Somos una comunidad dinámica y flexible, que se adapta a cada contexto y desafío,
                 fortaleciendo redes que potencian nuestro hacer.
               </p>
-              <p className={styles.workParagraph}>
+              <p className={styles.bodyText}>
                 En ese camino, construimos relaciones sólidas y sostenidas en el tiempo, basadas en la confianza, el crecimiento
                 conjunto y la mejora continua. Creemos profundamente que el trabajo compartido y progresivo es el camino para
                 alcanzar resultados auténticos y duraderos.

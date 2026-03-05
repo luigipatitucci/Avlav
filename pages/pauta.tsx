@@ -38,7 +38,7 @@ function WhyPauta() {
               {reasons.map((reason) => (
                 <article key={reason.label} className={styles.pautaReasonItem}>
                   <h3 className={styles.pautaReasonLabel}>{reason.label}</h3>
-                  <p className={styles.pautaReasonText}>{reason.text}</p>
+                  <p className={styles.bodyText}>{reason.text}</p>
                 </article>
               ))}
             </div>

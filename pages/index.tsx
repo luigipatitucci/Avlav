@@ -67,7 +67,7 @@ export default function Home() {
                 <h2 className={`${styles.resultsTitle} ${styles.raisedTitle}`}>
                   <span className={styles.magentaAccent}>RESULTADOS</span> QUE IMPULSAN TU NEGOCIO
                 </h2>
-                <p className={styles.resultsSubtitle}>
+                <p className={styles.bodyText}>
                   No solo creamos contenido, generamos estrategias que convierten.
                 </p>
                 <div className={styles.resultsProof}>
@@ -93,7 +93,7 @@ export default function Home() {
             <div className={styles.ctaContainer}>
               <div className={styles.ctaContent}>
                 <h2 className={`${styles.ctaTitle} ${styles.raisedTitle}`}>¿LISTO PARA POTENCIAR TU MARCA?</h2>
-                <p className={styles.ctaSubtitle}>
+                <p className={styles.bodyText}>
                   Hablemos de tu proyecto. Te acompañamos desde la idea hasta los resultados.
                 </p>
                 <Link href="/contacto" className={styles.ctaButton}>CONTACTANOS</Link>

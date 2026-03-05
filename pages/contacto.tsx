@@ -17,7 +17,7 @@ function ContactSection() {
               CONSTRUYAMOS ALGO <span className={styles.magentaAccent}>SIGNIFICATIVO</span>
             </h1>
             
-            <p className={styles.contactText}>
+            <p className={styles.bodyText}>
               Contanos sobre tu proyecto. Te ayudaremos a definir el camino correcto, con claridad y propósito.
             </p>
 

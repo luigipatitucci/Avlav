@@ -98,7 +98,7 @@ export default function Header() {
         <nav className={`${styles.nav} ${open ? styles.open : ''}`}>
           <Link href="/servicios" className={linkClass('/servicios')}>SERVICIOS</Link>
           <Link href="/pauta" className={linkClass('/pauta', true)}>PAUTA PUBLICITARIA</Link>
-          <Link href="/quienes" className={linkClass('/quienes')}>QUIENES SOMOS</Link>
+          <Link href="/quienes-somos" className={linkClass('/quienes-somos')}>QUIENES SOMOS</Link>
           <Link href="/contacto" className={linkClass('/contacto')}>CONTACTO</Link>
         </nav>
       </div>

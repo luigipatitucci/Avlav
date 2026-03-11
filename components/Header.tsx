@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../styles/Header.module.css'
@@ -76,9 +77,11 @@ export default function Header() {
       <div className={styles.container}>
         <div className={styles.brand}>
           <Link href="/">
-            <img 
+            <Image 
               src="/branding/identidad-visual/logo-avlav-blanco.png" 
               alt="AVLAV"
+              width={120}
+              height={40}
               className={styles.logo}
             />
           </Link>

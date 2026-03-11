@@ -5,12 +5,6 @@ type ContactFormProps = {
   initialService?: string
 }
 
-type ApiResponse = {
-  ok?: boolean
-  message?: string
-  error?: string
-}
-
 export default function ContactForm({ initialService }: ContactFormProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from '../styles/Pages.module.css'
 
 type TeamMember = {
@@ -12,11 +11,9 @@ export default function EquipoCard({ member }: { member: TeamMember }) {
   return (
     <article className={styles.teamMember}>
       <div className={styles.teamPhoto}>
-        <Image
+        <img
           src={member.image}
           alt={member.name}
-          width={300}
-          height={300}
           className={styles.teamPhotoImage}
         />
       </div>

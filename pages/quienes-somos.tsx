@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import styles from '../styles/Pages.module.css'
@@ -125,11 +124,9 @@ function TeamSections() {
                   {section.people.map((person) => (
                     <article key={person.id} className={styles.teamSectionPerson}>
                       <div className={styles.teamPhoto}>
-                        <Image
+                        <img
                           src={person.image}
                           alt={person.name}
-                          width={300}
-                          height={300}
                           className={styles.teamPhotoImage}
                         />
                       </div>

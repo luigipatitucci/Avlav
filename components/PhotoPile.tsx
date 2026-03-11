@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from '../styles/Pages.module.css'
 
 export type PhotoItem = {
@@ -15,11 +14,9 @@ export default function PhotoPile({ photos }: PhotoPileProps) {
     <div className={styles.photoPile}>
       {photos.map((photo, index) => (
         <div key={index} className={styles.photoCard}>
-          <Image 
+          <img 
             src={photo.src} 
-            alt={photo.alt}
-            width={400}
-            height={300}
+            alt={photo.alt} 
             className={styles.photoImage}
           />
         </div>

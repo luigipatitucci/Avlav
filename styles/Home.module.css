@@ -393,6 +393,10 @@
   .bodyText {
     font-size: 15px;
     line-height: 1.7;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
   }
 
   .manifestoAccent {

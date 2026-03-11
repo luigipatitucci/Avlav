@@ -5,13 +5,19 @@ type ContactFormProps = {
   initialService?: string
 }
 
+type ApiResponse = {
+  ok?: boolean
+  message?: string
+  error?: string
+}
+
 export default function ContactForm({ initialService }: ContactFormProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [project, setProject] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
-  const [status, setStatus] = useState<'idle'|'success'|'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -25,33 +31,54 @@ export default function ContactForm({ initialService }: ContactFormProps) {
       setError('Por favor completá todos los campos requeridos.')
       return false
     }
+
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       setError('Por favor ingresá un email válido.')
       return false
     }
+
     setError(null)
     return true
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
     if (!validate()) return
+
     setLoading(true)
     setStatus('idle')
+    setError(null)
+
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject: project, message })
-      })
-      const body = await res.json()
-      if (!res.ok) throw new Error(body?.error || 'Error del servidor')
+      const response = await fetch("https://avlav-contact-api.vercel.app/api/contact", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name,
+    email,
+    project,
+    message
+  })
+})
+
+const data = await response.json()
+
+if (!response.ok) {
+  throw new Error(data?.error || "Error sending message")
+}
+
       setStatus('success')
       setName('')
       setEmail('')
-      setProject('')
+      setProject(initialService || '')
       setMessage('')
-      setTimeout(() => setStatus('idle'), 5000)
+
+      setTimeout(() => {
+        setStatus('idle')
+      }, 5000)
     } catch (err: unknown) {
       setStatus('error')
       setError(err instanceof Error ? err.message : 'Error desconocido')
@@ -67,7 +94,8 @@ export default function ContactForm({ initialService }: ContactFormProps) {
           Mensaje enviado exitosamente. Nos pondremos en contacto pronto.
         </div>
       )}
-      {status === 'error' && (
+
+      {status === 'error' && error && (
         <div className={styles.formError}>
           {error}
         </div>
@@ -75,8 +103,11 @@ export default function ContactForm({ initialService }: ContactFormProps) {
 
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Nombre</label>
+          <label className={styles.formLabel} htmlFor="name">
+            Nombre
+          </label>
           <input
+            id="name"
             type="text"
             className={styles.formInput}
             value={name}
@@ -87,8 +118,11 @@ export default function ContactForm({ initialService }: ContactFormProps) {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Email</label>
+          <label className={styles.formLabel} htmlFor="email">
+            Email
+          </label>
           <input
+            id="email"
             type="email"
             className={styles.formInput}
             value={email}
@@ -99,8 +133,11 @@ export default function ContactForm({ initialService }: ContactFormProps) {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Proyecto</label>
+          <label className={styles.formLabel} htmlFor="project">
+            Proyecto
+          </label>
           <input
+            id="project"
             type="text"
             className={styles.formInput}
             value={project}
@@ -110,8 +147,11 @@ export default function ContactForm({ initialService }: ContactFormProps) {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Mensaje</label>
+          <label className={styles.formLabel} htmlFor="message">
+            Mensaje
+          </label>
           <textarea
+            id="message"
             className={styles.formTextarea}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -121,8 +161,8 @@ export default function ContactForm({ initialService }: ContactFormProps) {
           />
         </div>
 
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className={styles.formSubmit}
           disabled={loading}
         >
@@ -132,4 +172,3 @@ export default function ContactForm({ initialService }: ContactFormProps) {
     </div>
   )
 }
-

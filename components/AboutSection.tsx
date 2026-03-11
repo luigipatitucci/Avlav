@@ -23,12 +23,6 @@ export default function AboutSection() {
       image: '/branding/fotos-equipo/LARA RODRIGUEZ.png',
     },
     {
-      id: 'team-3',
-      name: 'Lucas Candia',
-      role: 'Gestión Cultural · Artes Escénicas',
-      image: '/branding/fotos-equipo/LUCAS CANDIA.png',
-    },
-    {
       id: 'team-7',
       name: 'Mercedes Somoza',
       role: 'Diseño gráfico',
@@ -45,6 +39,12 @@ export default function AboutSection() {
       name: 'Romina Sastre',
       role: 'Diseño de Imagen y Sonido',
       image: '/branding/fotos-equipo/ROMINA SASTRE.jpg',
+    },
+    {
+      id: 'team-9',
+      name: 'Carlos Juárez',
+      role: 'Producción de Eventos · Técnica de Iluminación y Sonido',
+      image: '/branding/fotos-equipo/CARLOS JUÁREZ.jpg',
     },
     {
       id: 'team-6',
@@ -65,10 +65,10 @@ export default function AboutSection() {
       image: '/branding/fotos-equipo/HUGO VEKSLER_DISEÑO DE SONIDO.jpg',
     },
     {
-      id: 'team-9',
-      name: 'Carlos Juárez',
-      role: 'Producción de Eventos · Técnica de Iluminación y Sonido',
-      image: '/branding/fotos-equipo/CARLOS JUÁREZ.jpg',
+      id: 'team-3',
+      name: 'Lucas Candia',
+      role: 'Gestión Cultural · Artes Escénicas',
+      image: '/branding/fotos-equipo/LUCAS CANDIA.png',
     },
   ]
 

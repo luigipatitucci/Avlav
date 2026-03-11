@@ -8,6 +8,33 @@ export default function Footer() {
         <div className={styles.brand}>
           <Link href="/" className={styles.brandLink}>AVLAV</Link>
           <p className={styles.tag}>Soluciones digitales que convierten</p>
+          
+          <div className={styles.social}>
+            <a 
+              href="https://www.facebook.com/Avlavcooperativa" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Facebook de AVLAV"
+              className={styles.socialLink}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter"/>
+              </svg>
+            </a>
+            <a 
+              href="https://www.instagram.com/laboratorio.audiovisual.coop/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Instagram de AVLAV"
+              className={styles.socialLink}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="0" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className={styles.links}>
